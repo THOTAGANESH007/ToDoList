@@ -1,0 +1,71 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create_form input {
+  width: 300px;
+  padding: 10px;
+  border-bottom: 2px solid;
+  outline: none;
+}
+
+.create_form button {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+/* Task Container */
+.task {
+  display: flex;
+  align-items: center;
+  width: 345px;
+  justify-content: space-between;
+  background-color: rgb(99, 41, 41);
+
+  height: 40px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Text Visibility */
+.task p {
+  color: white;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Checkbox and Icons */
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox .icon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.task div .icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: red;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effect for Bin Icon */
+.task div .icon:hover {
+  transform: scale(1.1);
+}
+
+/* Strikethrough for Completed Tasks */
+.line_through {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
