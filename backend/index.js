@@ -5,9 +5,10 @@ const ToDo = require("./model");
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+const dotenv = require("dotenv");
+dotenv.config();
 mongoose
-  .connect("mongodb://localhost:27017/tiger")
+  .connect(process.env.MONGO_URI)
   .then(console.log("Connected to Mongo..."))
   .catch(console.log("Something Went Wrong..."));
 
