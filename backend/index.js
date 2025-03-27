@@ -9,8 +9,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 mongoose
   .connect(process.env.MONGO_URI)
-  .then(console.log("Connected to Mongo..."))
-  .catch(console.log("Something Went Wrong..."));
+  .then(() => console.log("Connected to Mongo..."))
+  .catch(() => console.log("Something Went Wrong..."));
 
 app.get("/get", (_, res) => {
   ToDo.find()
