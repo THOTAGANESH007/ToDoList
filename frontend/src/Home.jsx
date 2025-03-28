@@ -12,14 +12,14 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:7770/get")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/get`)
       .then((result) => setTodos(result.data))
       .catch((err) => console.log(err));
   }, [todos]);
 
   const handleEdit = (id, done) => {
     axios
-      .put(`http://localhost:7770/update/${id}`, { done: !done }) // Send updated 'done' status
+      .put(`${import.meta.env.VITE_BACKEND_URL}/update/${id}`, { done: !done }) // Send updated 'done' status
       .then(() => {
         setTodos((prevTodos) =>
           prevTodos.map((todo) =>
@@ -32,7 +32,7 @@ function Home() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:7770/delete/${id}`)
+      .delete(`${import.meta.env.VITE_BACKEND_URL}/delete/${id}`)
       .then(() => {
         setTodos((prevTodos) => prevTodos.filter((todo) => todo._id !== id));
       })

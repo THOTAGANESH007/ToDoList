@@ -13,7 +13,7 @@ function Create() {
     }
 
     axios
-      .post("http://localhost:7770/add", { task: task })
+      .post(`${import.meta.env.VITE_BACKEND_URL}/add`, { task: task })
       .then((result) => location.reload())
       .catch((err) => console.log(err));
   };
