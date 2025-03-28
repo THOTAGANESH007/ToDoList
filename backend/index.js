@@ -45,6 +45,6 @@ app.delete("/delete/:id", (req, res) => {
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
 });
-app.listen(7770, () => {
+app.listen(process.env.PORT, () => {
   console.log("Listening...");
 });
